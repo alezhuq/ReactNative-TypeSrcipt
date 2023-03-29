@@ -45,7 +45,7 @@ export default function Lab4() {
         <Text style={styles.text}>name = {elem.name}</Text>
         <Text style={styles.text}>occupation = {elem.occupation}</Text>
         <Text style={styles.text}>patients per week = {elem.patientsPerWeek}</Text>
-        <Text style={styles.text}>area = {elem.income()}</Text>
+        <Text style={styles.text}>income = {elem.income()}</Text>
       </View>
     )
    }
@@ -60,7 +60,7 @@ export default function Lab4() {
         </Pressable>
         {arr.map(funcMap)}
         {sumInc 
-        ? <Text style={[styles.text, {marginTop: 40}]}>MinArea = {sumInc}</Text>
+        ? <Text style={[styles.text, {marginTop: 40}]}>Total income = {sumInc}</Text>
         : null}
     </ScrollView>
   );
