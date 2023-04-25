@@ -1,5 +1,5 @@
-import { Doctor } from "./classes/Doctor";
-import { Nurse } from "./classes/Nurse";
+import { Doctor } from "./classes/lab4/Doctor";
+import { Nurse } from "./classes/lab4/Nurse";
 
 
 describe("Doctor", () => {

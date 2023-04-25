@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
-import { MedWorker } from '../../classes/MedWorker';
-import { Doctor } from '../../classes/Doctor';
-import { Nurse } from '../../classes/Nurse';
+import { MedWorker } from '../../classes/lab4/MedWorker';
+import { Doctor } from '../../classes/lab4/Doctor';
+import { Nurse } from '../../classes/lab4/Nurse';
 import { useState } from 'react';
 
 export default function Lab4() {
