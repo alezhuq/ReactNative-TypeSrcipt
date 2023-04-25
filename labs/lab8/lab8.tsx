@@ -3,8 +3,8 @@ import React, { useState} from 'react';
 import { nameValidator, districtValidator, lengthValidator, historyValidator, previousNamesValidator, PreviousName, Street} from './validation';
 
 const Lab8 = () => {
-  
-  const streets : Street[] = [] 
+
+  const [streets, setStreets] = useState<Street[]>([])
 
   const [name, setName] = useState('')
   const [length, setLength] = useState<number>(0)
@@ -53,8 +53,7 @@ const Lab8 = () => {
         alert(previousNamesValidator(newStreet).message)
         return
     }
-    streets.push(newStreet)
-    console.log(streets)
+    setStreets([...streets, newStreet])
   }
 
   return (
@@ -90,6 +89,25 @@ const Lab8 = () => {
         <Pressable style={({pressed}) => [{backgroundColor: pressed ? '#66a3ff' : '#0066ff'}, styles.button]} onPress={addStreet}>
             <Text style={styles.text}>Додати</Text>
         </Pressable>
+        <View>
+            {streets.map((elem: Street)=>{
+                return <View key={elem.name}>
+                    <Text style={styles.text}>name : {elem.name}</Text>
+                    <Text style={styles.text}>district : {elem.district}</Text>
+                    <Text style={styles.text}>history : {elem.history}</Text>
+                    <Text style={styles.text}>length : {elem.length}</Text>
+                    <Text style={styles.text}>
+                    previous streets : 
+                        {elem.previousNames.length===0?null:elem.previousNames.map((el : any)=>{
+                            return<Text key={el.id} style={styles.text}> {el.value}</Text>
+                        })}
+                    </Text>
+                    <Text style={styles.text}>----------------</Text>
+                </View>
+            })}
+            
+        </View>
+
     </ScrollView>
     </>
   );

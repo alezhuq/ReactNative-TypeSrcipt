@@ -3,10 +3,10 @@ interface Engine {
     stop(): string;
   }
   
-  interface ICE extends Engine {
-    increaseSpeed(): string
-    decreaseSpeed(): string;
-  }
+interface ICE extends Engine {
+  increaseSpeed(): string
+  decreaseSpeed(): string;
+}
   
   export class Diesel implements ICE {
     power: number;
